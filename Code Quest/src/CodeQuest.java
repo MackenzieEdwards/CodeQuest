@@ -1,27 +1,27 @@
-public class CodeQuest
-	{
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
-	public static void main(String[] args)
+public class CodeQuest {
 
-		{ 
-		for (int i = 1; i <= 100; i++)
-			{
-			if (i % 3 == 0 && i % 7 == 0)
-				{
-				System.out.println("CODEQUEST" );
-				} 
-			else if (i % 3 == 0)
-				{
+	public static void main (String[] args) throws IOException
+	   {
+	      Scanner file = new Scanner( new File( "Prob01.in.txt" ) );
+	      int times = file.nextInt();  
+	      	     
+	      for( int i = 0; i < times; i++ )
+	      {
+	    	  int x = file.nextInt();
+			//System.out.println(x);
+			if (x % 3 == 0 && x % 7 == 0) {
+				System.out.println("CODEQUEST");
+			} else if (x % 3 == 0) {
 				System.out.println("CODE");
-				}
-			else if (i % 7 == 0)
-				{
+			} else if (x % 7 == 0) {
 				System.out.println("QUEST");
-				}
-			else
-				{
-				System.out.println(i);
-				}
+			} else {
+				System.out.println(x);
 			}
 		}
 	}
+}
