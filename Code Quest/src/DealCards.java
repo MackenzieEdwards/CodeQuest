@@ -23,7 +23,6 @@ public class DealCards {
 			hands++;
 			System.out.println("HAND " + hands);
 
-			//System.out.println(s);
 			for (int x = 0; x < s.length(); x++) {
 				c = s.charAt(x);
 
