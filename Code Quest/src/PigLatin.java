@@ -2,61 +2,62 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class PigLatin {
-
-	public static void main(String[] args) throws FileNotFoundException {
+public class PigLatin
+	{
+	public static void main(String[] args) throws FileNotFoundException
+		{
 		Scanner file = new Scanner(new File("Prob04.in.txt"));
-		while (file.hasNextLine()) {
+		int lines = file.nextInt();
+		file.nextLine();
+		for(int j = 0; j < lines; j++)
+			{
 			String s = file.nextLine();
-			//System.out.println("Line is " + s);
+			String[] words = s.split(" ");
+			for (int x = 0; x < words.length; x++)
+				{
+				String tmpStr = words[x];
+				int counter = 0;
 
-			if (s.length() > 0) {
-				String[] words = s.split(" ");
-				for (int x = 0; x < words.length; x++) {
-					//System.out.println(words[x]);
-					String tmpStr = words[x];
-
+				for (int i = 0; i < words.length -3; i++)
+					{
 					if (tmpStr.charAt(0) == 'a' || tmpStr.charAt(0) == 'e'
 							|| tmpStr.charAt(0) == 'i'
 							|| tmpStr.charAt(0) == 'o'
 							|| tmpStr.charAt(0) == 'u')
-					{
-						System.out.print(words[x] + "yay");
-					    System.out.print(" ");
+
+						{
+						break;
+						}
+
+					else
+						{
+						counter++;
+						}
 					}
-					else if (tmpStr.indexOf("qu") == 0)
+				if (counter <= 1)
 					{
-						System.out.print(tmpStr.substring(2)+"qu"+"ay");
-						System.out.print(" ");
+					if (tmpStr.charAt(0) == 'a' || tmpStr.charAt(0) == 'e'
+							|| tmpStr.charAt(0) == 'i'
+							|| tmpStr.charAt(0) == 'o'
+							|| tmpStr.charAt(0) == 'u')
+						{
+						System.out.print(tmpStr + "yay ");
+						} else
+						{
+						System.out.print(tmpStr.substring(1,
+								tmpStr.length())
+								+ tmpStr.substring(0, 1) + "ay ");
+						}
 					}
-					else if(tmpStr.indexOf("scr") == 0) 
+
+				else
 					{
-						System.out.print(tmpStr.substring(3)+"scr"+"ay");
-						System.out.print(" ");
-					}
-					else {
-						System.out.print(tmpStr.substring(1)+ tmpStr.charAt(0)+ "ay");
-						System.out.print(" ");
+					System.out.print(tmpStr.substring(counter,
+							tmpStr.length())
+							+ tmpStr.substring(0, counter) + "ay ");
 					}
 				}
-				System.out.println();
+			System.out.println();
 			}
 		}
-
-		/*
-		 * for(int i = 0; i < txtfile.length -1; i++;) {
-		 * if(txtfile.charAt(0).equals("a") || txtfile.charAt(0).equals("e") ||
-		 * txtfile.charAt(0).equals("i") || txtfile.charAt(0).equals("o") ||
-		 * txtfile.charAt(0).equals("u")) { System.out.println(txtfile + "yay");
-		 * } if() } String original = null; String translated; char firstLetter;
-		 * 
-		 * // translated = original;
-		 * 
-		 * 
-		 * firstLetter = original.charAt(0);
-		 * 
-		 * translated = original.substring(1) + firstLetter + "ay";
-		 */
-
 	}
-}
