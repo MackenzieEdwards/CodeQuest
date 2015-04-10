@@ -6,13 +6,13 @@ public class CodeQuest {
 
 	public static void main (String[] args) throws IOException
 	   {
-	      Scanner file = new Scanner( new File( "Prob01.in.txt" ) );
-	      int times = file.nextInt();  
+	      Scanner file = new Scanner( new File( "Prob01.in.txt" ));
+	      int times = file.nextInt();
+	      file.nextLine();
 	      	     
 	      for( int i = 0; i < times; i++ )
 	      {
-	    	  int x = file.nextInt();
-			//System.out.println(x);
+	    	int x = file.nextInt();
 			if (x % 3 == 0 && x % 7 == 0) {
 				System.out.println("CODEQUEST");
 			} else if (x % 3 == 0) {

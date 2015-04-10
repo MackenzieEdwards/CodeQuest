@@ -3,9 +3,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class DealCards {
+public class DealCards
+	{
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws FileNotFoundException
+		{
 		char c = 'z';
 		int hands = 0;
 		int cards = 1;
@@ -18,12 +20,14 @@ public class DealCards {
 
 		Scanner file = new Scanner(new File("Prob02.in.txt"));
 
-		while (file.hasNextLine()) {
+		while (file.hasNextLine())
+			{
 			String s = file.nextLine();
 			hands++;
 			System.out.println("HAND " + hands);
 
-			for (int x = 0; x < s.length(); x++) {
+			for (int x = 0; x < s.length(); x++)
+				{
 				c = s.charAt(x);
 
 				if (c == ' ')
@@ -66,7 +70,7 @@ public class DealCards {
 					blackCards++;
 				if (c == 'D' || c == 'H')
 					redCards++;
-			}
+				}
 			System.out.println(redCards + "-Red");
 			System.out.println(blackCards + "-Black");
 			System.out.println(clubs + "-Clubs");
@@ -82,35 +86,37 @@ public class DealCards {
 			System.out.println(eights + "-8 cards");
 			System.out.println(nines + "-9 cards");
 			System.out.println(tens + "-10 cards");
-			System.out.println(jacks + "-Jack");
+			System.out.println(jacks + "-Jacks");
 			System.out.println(queens + "-Queens");
 			System.out.println(kings + "-Kings");
 			System.out.println(aces + "-Aces");
-			
-			cards = 1;
-			twos = 0;
-			threes = 0;
-			fours = 0;
-			fives = 0;
-			sixes = 0;
-			sevens = 0;
-			eights = 0;
-			nines = 0;
-			tens = 0;
-			jacks = 0;
-			queens = 0;
-			kings = 0;
-			aces = 0;
-			clubs = 0;
-			spades = 0;
-			hearts = 0;
-			diamonds = 0;
-			redCards = 0;
-			blackCards = 0;
-
 			System.out.println();
+			
+			}
+		
+
+		cards = 1;
+		twos = 0;
+		threes = 0;
+		fours = 0;
+		fives = 0;
+		sixes = 0;
+		sevens = 0;
+		eights = 0;
+		nines = 0;
+		tens = 0;
+		jacks = 0;
+		queens = 0;
+		kings = 0;
+		aces = 0;
+		clubs = 0;
+		spades = 0;
+		hearts = 0;
+		diamonds = 0;
+		redCards = 0;
+		blackCards = 0;
+
+		System.out.println();
 		}
 
 	}
-
-}

@@ -18,7 +18,6 @@ public class ValleySort
       while (file.hasNextLine()) 
       {
           String s = file.nextLine();
-          //System.out.println(i + " line is " + s);
           if(s.length() > 0)
           {
             String []inums = s.split(" ");
